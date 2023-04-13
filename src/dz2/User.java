@@ -13,7 +13,7 @@ public class User {
     }
     public  boolean isValidNumber(int num)
     {
-        if(num>=0&&num<=2)
+        if(num>=0&&num<=4)
         {
             return true;
         }
@@ -21,13 +21,13 @@ public class User {
     }
     public Elements getElement()
     {
-        System.out.println("Enter your element number(0-ROCK,1-PAPER,2-SCISSORS):");
+        System.out.println("Enter your element number(0-ROCK,1-PAPER,2-SCISSORS,3-LIZARD,4-SPOCK):");
         int num= in.nextInt();
         boolean isValid=isValidNumber(num);
         while (isValid==false)
         {
             System.out.println("ERROR VALUE,ENTER AGAIN!");
-            System.out.println("Enter your element number(0-ROCK,1-PAPER,2-SCISSORS):");
+            System.out.println("Enter your element number(0-ROCK,1-PAPER,2-SCISSORS,3-LIZARD,4-SPOCK):");
             num = in.nextInt();
             isValid=isValidNumber(num);
         }
@@ -36,13 +36,19 @@ public class User {
         switch (num)
         {
             case 0:
-                element1=element[0];
+                element1= Elements.ROCK;
                 break;
             case 1:
-                element1=element[1];
+                element1= Elements.PAPER;
                 break;
             case 2:
-                element1=element[2];
+                element1= Elements.SCISSORS;
+                break;
+            case 3:
+                element1= Elements.LIZARD;
+                break;
+            case 4:
+                element1= Elements.SPOCK;
                 break;
             default:
                 System.out.println("Some error happened!");

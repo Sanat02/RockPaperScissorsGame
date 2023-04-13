@@ -4,11 +4,9 @@ import java.util.Random;
 
 public class Computer {
     private Random random;
-    private Elements[] element;
     public Computer()
     {
         random=new Random();
-        element= Elements.values();
     }
     private  int getRandomNumber()
     {
@@ -23,13 +21,13 @@ public class Computer {
         switch (num)
         {
             case 0:
-               element1=element[0];
+               element1=Elements.ROCK;
                 break;
             case 1:
-                element1=element[1];
+                element1=Elements.PAPER;
                 break;
             case 2:
-                element1=element[2];
+                element1=Elements.SCISSORS;
                 break;
             default:
                 System.out.println("Some error happened!");

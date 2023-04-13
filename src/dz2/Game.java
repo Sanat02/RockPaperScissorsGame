@@ -16,19 +16,22 @@ public class Game {
     public Game()
     {
         System.out.println("------------------Start Game------------------");
+
     }
     public void startGame()
     {
         int contGame=1;
         while(contGame==1) {
-            computer=new Computer();
-            computerChoice=computer.getElement();
-            user=new User();
-            userChoice=user.getElement();
-            winState= WinState.values();
+            computer = new Computer();
+            computerChoice = computer.getElement();
+            user = new User();
+            userChoice = user.getElement();
+            winState = WinState.values();
+
             System.out.println("Computer choice is:" + computerChoice);
             System.out.println("User choice is:" + userChoice);
             WinState state = getWinner();
+            System.out.println(state);
             if (state.equals(WinState.WIN)) {
                 System.out.printf("%s beats %s %nUSER WINS!%n", userChoice, computerChoice);
                 wins++;
@@ -39,54 +42,79 @@ public class Game {
                 System.out.printf("%s equals %s %nIT IS A TIE!%n", computerChoice, userChoice);
                 ties++;
             }
-
             totalGames++;
             contGame = continueGame();
         }
+
+
         printFinalTab();
         System.out.println("--------------------End Game--------------------");
 
     }
     private WinState getWinner()
     {
-        if(computerChoice.equals(userChoice))
+        if(userChoice==computerChoice)
         {
-            return winState[2]; //ничья
+            return WinState.TIE; //ничья
         }
-        else if(userChoice.equals("ROCK"))
+        else if(userChoice==Elements.ROCK)
         {
-            if(computerChoice.equals("PAPER"))
+            if(computerChoice==Elements.PAPER||computerChoice==Elements.SPOCK)
             {
-                return winState[1];
+                return WinState.LOSS;
             }
             else
             {
-                return winState[0];
+                return WinState.WIN;
             }
         }
-        else if(userChoice.equals("PAPER"))
+        else if(userChoice==Elements.PAPER)
         {
-            if(computerChoice.equals("ROCK"))
+            if(computerChoice==Elements.ROCK||computerChoice==Elements.SPOCK)
             {
-                return winState[0];
+                return WinState.WIN;
             }
             else
             {
-                return winState[1];
+                return WinState.LOSS;
+            }
+        }
+        else if(userChoice==Elements.SCISSORS)
+        {
+            if(computerChoice==Elements.ROCK||computerChoice==Elements.SPOCK)
+            {
+                return WinState.LOSS;
+            }
+            else
+            {
+                return WinState.WIN;
+            }
+        }
+        else if(userChoice==Elements.LIZARD)
+        {
+            if(computerChoice==Elements.ROCK||computerChoice==Elements.SCISSORS)
+            {
+                return WinState.LOSS;
+            }
+            else
+            {
+                return WinState.WIN;
             }
         }
         else
         {
-            if(computerChoice.equals("ROCK"))
+            if(computerChoice==Elements.SCISSORS||computerChoice==Elements.ROCK)
             {
-                return winState[1];
+                return WinState.WIN;
             }
             else
             {
-                return winState[0];
+                return WinState.LOSS;
             }
         }
+
     }
+
     private void printFinalTab()
     {
         System.out.println("_____________________________________________________________________________________________________________________________________________");
