@@ -16,11 +16,7 @@ public class Game {
     public Game()
     {
         System.out.println("------------------Start Game------------------");
-//        computer=new Computer();
-//        computerChoice=computer.getElement();
-//        user=new User();
-//        userChoice=user.getElement();
-//        winState=WinState.values();
+
     }
     public void startGame()
     {
@@ -77,7 +73,7 @@ public class Game {
     {
         System.out.println("_____________________________________________________________________________________________________________________________________________");
         System.out.printf("| %-25s |%-25s | %-25s| %-25s | %-25s   |%n","WINS","LOSSES","TIES","TOTAL","PERCENTAGE WON");
-        System.out.printf("| %-25s |%-25s | %-25s| %-25s | %-25s   |%n",wins,loss,ties,totalGames,(100/(double)totalGames));
+        System.out.printf("| %-25s |%-25s | %-25s| %-25s | %-25s   |%n",wins,loss,ties,totalGames,((((double)wins+(double)(ties/2))/totalGames)*100));
         System.out.println("_____________________________________________________________________________________________________________________________________________");
     }
     private   int continueGame()

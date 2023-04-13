@@ -29,7 +29,7 @@ public class User {
         }
         else
         {
-            System.out.println("Enter your element number(0-ROCK,1-PAPER,2-SCISSORS,3-LIZARD):");
+            System.out.println("Enter your element number(0-ROCK,1-PAPER,2-SCISSORS):");
         }
         int num= in.nextInt();
         boolean isValid=isValidNumber(num);
@@ -42,7 +42,7 @@ public class User {
             }
             else
             {
-                System.out.println("Enter your element number(0-ROCK,1-PAPER,2-SCISSORS,3-LIZARD):");
+                System.out.println("Enter your element number(0-ROCK,1-PAPER,2-SCISSORS):");
             }
             num = in.nextInt();
             isValid=isValidNumber(num);

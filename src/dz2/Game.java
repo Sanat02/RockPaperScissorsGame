@@ -119,7 +119,7 @@ public class Game {
     {
         System.out.println("_____________________________________________________________________________________________________________________________________________");
         System.out.printf("| %-25s |%-25s | %-25s| %-25s | %-25s   |%n","WINS","LOSSES","TIES","TOTAL","PERCENTAGE WON");
-        System.out.printf("| %-25s |%-25s | %-25s| %-25s | %-25s   |%n",wins,loss,ties,totalGames,(100/(double)totalGames));
+        System.out.printf("| %-25s |%-25s | %-25s| %-25s | %-25s   |%n",wins,loss,ties,totalGames,((((double)wins+(double)(ties/2))/totalGames)*100));
         System.out.println("_____________________________________________________________________________________________________________________________________________");
     }
     private   int continueGame()
