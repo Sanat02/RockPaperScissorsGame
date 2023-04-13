@@ -1,4 +1,4 @@
-package OOP;
+package dz1;
 
 public enum WinState {
     WIN,
